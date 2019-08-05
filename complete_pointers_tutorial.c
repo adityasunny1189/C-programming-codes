@@ -1,4 +1,5 @@
 #include<stdio.h>
+void swap(int*, int*);
 int main()
 {
     int i = 4;
@@ -11,5 +12,18 @@ int main()
     printf("address of pointer j = %u\n",&j);
     printf("value of i = %d\n",*j);
     printf("value of i = %d\n",*(*(&j)));
+
+    int a = 10;
+    int b = 29;
+    printf("value of a is %d\nvalue of b is %d",a,b);
+    swap(&a,&b);
+    printf("\nvalue of a is %d\nvalue of b is %d",a,b);
     return 0;
+}
+void swap(int *a,int *b)
+{
+    int t;
+    t = *(a);
+    *a = *b;
+    *b = t;
 }
