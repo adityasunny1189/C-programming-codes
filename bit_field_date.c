@@ -26,18 +26,26 @@ int main()
 
     if(D1.day == 28)
     {
-        if(D1.year % 4 == 0)
+        if(D1.month == 2)
         {
-            D1.day++;
+            if(D1.year % 4 == 0)
+            {
+                D1.day++;
+            }
+            else
+            {
+                D1.day = 1;
+                D1.month++;
+            }
         }
         else
         {
-            D1.day = 1;
-            D1.month++;
+            D1.day++;
         }
+        
     }
 
-    if(D1.day == 31)
+    else if(D1.day == 31)
     {
         if(D1.month == 12)
         {
@@ -52,7 +60,7 @@ int main()
         }
     }
 
-    if(D1.day == 30)
+    else if(D1.day == 30)
     {
         if(D1.month == 4 || D1.month == 6 || D1.month == 9 || D1.month == 11)
         {
@@ -64,6 +72,12 @@ int main()
             D1.day++;
         }
     }
+
+    else
+    {
+        D1.day++;
+    }
+    
 
     printf("Tommorows date is %d-%d-%d\n",D1.day,D1.month,D1.year);
 
