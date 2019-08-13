@@ -4,15 +4,15 @@ int main()
     union num
     {
         int no;
-        // char a[4];
-        char b;
+        char a[4];
     };
     union num N1;
-    N1.b = 'B';
-    printf("%d",N1.no);
-    // N1.no = 512;
-    // for(int i= 0 ; i<4; i++)
-    //     printf("%d\n",N1.a[i]);
+    N1.no = 12000;
+    // printf("%d",N1.no);
+    for(int i= 0 ; i<4; i++)
+        printf("%d\n",N1.a[i]);
+    printf("\n");
+    printf("%d",sizeof(int));
     printf("\n");
     return 0;
 }
