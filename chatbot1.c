@@ -33,5 +33,6 @@ int main()
         case 'F':printf("Hello %s i am adam\n",U1.name);break;
         default:printf("You have selected wrong gender\n %s",U1.name);
     }
+    printf("How may i help you\n");
     return 0;
 }
