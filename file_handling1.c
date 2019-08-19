@@ -10,7 +10,7 @@ int main()
 
     while(1)
     {
-        ch = fgetc(fp);
+        ch = getc(fp);
         if(ch == EOF)
             break;
         
