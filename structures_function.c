@@ -1,5 +1,5 @@
 #include<stdio.h>
-void fun(struct student)
+void fun(struct student S1)
 {
     scanf("%s",S1.name);
 }
@@ -13,6 +13,6 @@ int main()
     };
     struct student S1;
     printf("enter students details\n");
-    fun(S1);
+    fun(struct student S1);
     return 0;
 }

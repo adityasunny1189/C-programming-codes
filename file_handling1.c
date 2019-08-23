@@ -6,7 +6,7 @@ int main()
     FILE *fp;
     char ch;
     
-    fp = fopen("multiplication_table.c","r");
+    fp = fopen("a.out","rb");
 
     while(1)
     {
