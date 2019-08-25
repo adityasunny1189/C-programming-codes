@@ -13,7 +13,7 @@ int main()
 
     FILE *fp;
     fp = fopen("STUDENT_FILE.txt","w");
-    fprintf(fp,"Name\tUSN\tBranch\tSem\n");
+    fprintf(fp,"Name\tUSN\t\tBranch\tSem\n");
     printf("enter students details (Name usn branch sem)\n");
     while (choice == 1)
     {
