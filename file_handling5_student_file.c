@@ -1,7 +1,6 @@
 #include<stdio.h>
-int main()
-{
-    struct STU
+
+struct STU
     {
         char name[20];
         char usn[20];
@@ -9,20 +8,44 @@ int main()
         int sem;
     }S1;
 
-    int choice = 1;
+void Read_file(FILE *fp);
+void Display_file(FILE *fp);
 
+int main()
+{
     FILE *fp;
+    Read_file(fp);
+    Display_file(fp);
+    return 0;
+}
+
+void Read_file(FILE *fp)
+{
+    int choice = 1;
     fp = fopen("STUDENT_FILE.txt","w");
     fprintf(fp,"Name\tUSN\t\tBranch\tSem\n");
-    printf("enter students details (Name usn branch sem)\n");
     while (choice == 1)
     {
+        printf("enter students details (Name usn branch sem)\n");
         scanf("%s%s%s%d",S1.name,S1.usn,S1.branch,&S1.sem);
         fprintf(fp,"%s\t%s\t%s\t%d\n",S1.name,S1.usn,S1.branch,S1.sem);
+        // fwrite(&S1,sizeof(S1),1,fp);
         printf("Do you want to continue(0/1)\n");
         scanf("%d",&choice);
     }
     printf("\n");
     fclose(fp);
-    
+}
+
+void Display_file(FILE *fp)
+{
+    char ch;
+    fp = fopen("STUDENT_FILE.txt","r");
+    while(ch != EOF)
+    {
+        ch = getc(fp);
+        printf("%c",ch);
+    }
+    printf("\n");
+    fclose(fp);
 }
