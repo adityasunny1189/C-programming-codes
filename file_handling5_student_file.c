@@ -10,19 +10,24 @@ struct STU
 
 void Read_file(FILE *fp);
 void Display_file(FILE *fp);
+void Search_data(FILE *fp, char s_usn[]);
 
 int main()
 {
     FILE *fp;
+    char s_usn[15];
     Read_file(fp);
     Display_file(fp);
+    printf("Enter the student usn to search\n");
+    scanf("%s",s_usn);
+    Search_data(fp,s_usn);
     return 0;
 }
 
 void Read_file(FILE *fp)
 {
     int choice = 1;
-    fp = fopen("STUDENT_FILE.txt","w");
+    fp = fopen("STUDENT_FILE.txt","a");
     fprintf(fp,"Name\tUSN\t\tBranch\tSem\n");
     while (choice == 1)
     {
@@ -48,4 +53,18 @@ void Display_file(FILE *fp)
     }
     printf("\n");
     fclose(fp);
+}
+
+void Search_data(FILE *fp, char s_usn[])
+{
+    fp = fopen("STUDENT_FILE.txt","r");
+    int found = 0;
+    while(!feof(fp))
+    {
+        if(s_usn == S1.usn)
+        {
+            printf("File Found\n");
+        }
+    }
+
 }
